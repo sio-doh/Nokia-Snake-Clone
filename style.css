@@ -1,0 +1,33 @@
+body {
+    height: 100vh; 
+    width: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    margin: 0 auto; 
+    background-color: rgb(219,218,214);
+}
+
+h1 {
+    text-align: center; 
+    color: rgb(50, 50, 50);
+} 
+
+#gameboard {
+    background-color: rgb(173, 255, 47);  
+    width: 100vmin; 
+    height: 100vmin; 
+    display: grid;
+    grid-template-rows: repeat(21, 1fr); 
+    grid-template-columns: repeat(21, 1fr); 
+} 
+
+.snake {
+    background-color: hsl(83, 40%, 14%); 
+    border: .25vmin solid black; 
+} 
+
+.apple {
+    background-color: hsl(0, 100%, 50%); 
+    border: .25vmin solid black;
+}
