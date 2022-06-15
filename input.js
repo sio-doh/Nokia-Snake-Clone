@@ -5,7 +5,37 @@ let lastInputDir = { x: 0, y: 0 }
 export function getInputDir() { 
     lastInputDir = inputDir 
     return inputDir
-} 
+}
+
+let top = document.getElementById('top');
+let down = document.getElementById('down');
+let left = document.getElementById('left');
+let right = document.getElementById('right');
+
+// execute function when user presses a key on keyboard
+top.addEventListener("click", function() { 
+    // if user presses "Enter" key on keyboard
+    if ('top'.key === "Enter") {
+        document.getElementById('top').click();
+    }
+});
+
+down.addEventListener("click", function() { 
+    if ('down'.key === "Enter") {
+        document.getElementById('down').click();
+    }  
+});
+
+left.addEventListener("click", function() { 
+    if ('left'.key === "Enter") {
+        document.getElementById('left').click();
+    }
+}); 
+right.addEventListener("click", function() { 
+    if ('right'.key === "Enter") {
+        document.getElementById('right').click();
+    } 
+});
 
 window.addEventListener('keydown', e => {
     // e.key is key up, key down, key left or key right
@@ -37,5 +67,3 @@ window.addEventListener('keydown', e => {
             break  
     }
 }) 
-
-

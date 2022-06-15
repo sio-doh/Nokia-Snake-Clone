@@ -1,12 +1,12 @@
 import { getInputDir } from "./input.js"; 
 
 // export number of times snake moves per second 
-export const SNAKE_SPEED = 3
+export const SNAKE_SPEED = 1
 // represent snake as array of x, y positions 
 const snakeBody = [{ x: 11, y: 11 }] 
 let newPieces = 0 
 
-const GRID_SIZE = 21
+const GRID_SIZE = 32
 
 function randGridPosition() {
     return {
@@ -63,7 +63,7 @@ export function draw(gameboard) {
     // set row position to y and column position to x
     appleElement.style.gridRowStart = apple.y 
     appleElement.style.gridColumnStart = apple.x  
-    appleElement.classList.add('apple') // 'food'
+    appleElement.classList.add('apple') 
     gameboard.appendChild(appleElement) 
 }
   

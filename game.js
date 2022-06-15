@@ -4,7 +4,13 @@ import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getHead, snakeCr
 let lastRenderTime = 0 
 let gameOver = false 
 const gameboard = document.getElementById('gameboard') 
-const GRID_SIZE = 21
+const GRID_SIZE = 32
+
+// refresh screen when 'new game' button is selected
+let btn = document.getElementById("newGame");
+btn.addEventListener("click", function() {
+    window.location = '/' 
+})
 
 // currentTime = exact timestamp of when main() runs 
 function main(currentTime) {  
@@ -26,7 +32,6 @@ function main(currentTime) {
     if (secondsSinceLastRender < 1 / SNAKE_SPEED) return 
     // ask browser when can I render my next frame 
     // here you are requesting a frame to animate the game 
-    // ==> remove this -> console.log('Render') 
     lastRenderTime = currentTime 
      
     update() // updates game logic
@@ -35,8 +40,7 @@ function main(currentTime) {
     // update if snake gets longer 
     // game over if snake hits itself or the wall
     
-    // draws or renders everything based on update loop
-    draw() 
+    draw() // draws or renders everything based on update loop 
 } 
 
 window.requestAnimationFrame(main) 
@@ -62,9 +66,9 @@ function offGrid(location) {
     return (
         location.x < 1 || location.y < 1 || 
         location.x > GRID_SIZE || location.y > GRID_SIZE
-    )
+    ) 
 } 
 
 function dies() {
     gameOver = offGrid(getHead()) || snakeCrisscross()
-}
+} 
