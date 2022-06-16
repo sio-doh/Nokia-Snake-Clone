@@ -1,11 +1,11 @@
 import { getInputDir } from "./input.js"; 
 
 // export number of times snake moves per second 
-export const SNAKE_SPEED = 1
+export let SNAKE_SPEED = 1
 // represent snake as array of x, y positions 
 const snakeBody = [{ x: 11, y: 11 }] 
 let newPieces = 0 
-
+let scoring = 0
 const GRID_SIZE = 32
 
 function randGridPosition() {
@@ -44,6 +44,14 @@ export function update() {
         // if apple is on snakeBody position 
         expandSnakeBody(GROWTH_RATE)
         apple = getRandAppleLocation() 
+
+        // increment the score display every time snake body lands on apple
+        scoring++; 
+        document.getElementById("playerScore").innerText = scoring; 
+        console.log(scoring)
+        
+        // increase snake speed by 1 after snake body lands on apple
+        SNAKE_SPEED++;        
     }    
 } 
 
@@ -66,14 +74,14 @@ export function draw(gameboard) {
     appleElement.classList.add('apple') 
     gameboard.appendChild(appleElement) 
 }
-  
+
 // takes a number for how much snakeBody expands 
 export function expandSnakeBody(quantity) { 
     newPieces += quantity  
 } 
 
 export function onSnakeBody(location, { ignoreSnakeHead = false } = {}) { 
-    // is this location on the snakeBody
+    // check to see if this location is on the snakeBody, if so return sameSpot
     return snakeBody.some((snakePiece, index) => { 
         if (ignoreSnakeHead && index === 0) return false  
         // compare location with snakePiece to check if equal 
@@ -104,7 +112,7 @@ function addPieces() {
     newPieces = 0
 } 
 
-function getRandAppleLocation() {
+export function getRandAppleLocation() {
     // returns new position for apple every single time apple gets eaten 
     // position returned will not be on the snake
     let newAppleLocation 

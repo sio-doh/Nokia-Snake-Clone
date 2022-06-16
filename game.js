@@ -1,10 +1,10 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getHead, snakeCrisscross, 
-    update as updateApple, draw as drawApple } from './snake.js' 
+    update as updateApple, draw as drawApple} from './snake.js' 
 
 let lastRenderTime = 0 
 let gameOver = false 
 const gameboard = document.getElementById('gameboard') 
-const GRID_SIZE = 32
+const GRID_SIZE = 32 
 
 // refresh screen when 'new game' button is selected
 let btn = document.getElementById("newGame");
@@ -33,7 +33,7 @@ function main(currentTime) {
     // ask browser when can I render my next frame 
     // here you are requesting a frame to animate the game 
     lastRenderTime = currentTime 
-     
+
     update() // updates game logic
     // moves snake to correct position.  
     // update if apple(s) gets eaten or not, 
