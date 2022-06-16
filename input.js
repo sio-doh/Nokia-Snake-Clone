@@ -7,38 +7,44 @@ export function getInputDir() {
     return inputDir
 }
 
-let top = document.getElementById('top');
+let up = document.getElementById('up');
 let down = document.getElementById('down');
 let left = document.getElementById('left');
 let right = document.getElementById('right'); 
 
-// execute function when user presses a key on keyboard
-top.addEventListener("click", function() { 
-    // if user presses "Enter" key on keyboard
-    // if moving up or down at present ignore line 48
+// executes function when user presses up / down / left / right button on screen 
+up.addEventListener("click", function() { 
     // cannot select up if direction is going down 
-    if (!lastInputDir.y !== 0)  
+    if (lastInputDir.y !== 0) {
+        return;
+    }  
     // y: -1 moves up
     inputDir = { x: 0, y: -1 }   
 });
 
 down.addEventListener("click", function() { 
-    // if moving up or down at present ignore line 54
-    if (!lastInputDir.y !== 0) 
+    // cannot select down if direction is going up 
+    if (lastInputDir.y !== 0) {
+        return;
+    }  
     // y: 1 moves down
     inputDir = { x: 0, y: 1 }   
 });
 
 left.addEventListener("click", function() { 
-    // if moving left or right at present ignore line 60 
-    if (!lastInputDir.x !== 0)  
+    // cannot select left if direction is going right 
+    if (lastInputDir.x !== 0) {
+        return;
+    }
     // x: -1 moves left
     inputDir = { x: -1, y: 0 } 
 }); 
 
 right.addEventListener("click", function() { 
-    // if moving left or right at present ignore line 66
-    if (!lastInputDir.x !== 0)  
+    // cannot select right if direction is going left 
+    if (lastInputDir.x !== 0) {
+        return;
+    }  
     // x: 1 moves right
     inputDir = { x: 1, y: 0 } 
 }); 
@@ -46,27 +52,27 @@ right.addEventListener("click", function() {
 window.addEventListener('keydown', e => {
     // e.key is key up, key down, key left or key right
     switch (e.key) {
-        case 'ArrowUp' || top: 
-            // if moving up or down at present ignore line 48
+        case 'ArrowUp': 
+            // if moving up or down at present ignore line 60 
             // cannot select up if direction is going down 
             if (lastInputDir.y !== 0) break 
             // y: -1 moves up
             inputDir = { x: 0, y: -1 } 
             break            
-        case 'ArrowDown' || down: 
-            // if moving up or down at present ignore line 54
+        case 'ArrowDown': 
+            // if moving up or down at present ignore line 66 
             if (lastInputDir.y !== 0) break
             // y: 1 moves down
             inputDir = { x: 0, y: 1 } 
             break  
-        case 'ArrowLeft' || left: 
-            // if moving left or right at present ignore line 60 
+        case 'ArrowLeft': 
+            // if moving left or right at present ignore line 72 
             if (lastInputDir.x !== 0) break 
             // x: -1 moves left
             inputDir = { x: -1, y: 0 } 
             break  
-        case 'ArrowRight' || right: 
-            // if moving left or right at present ignore line 66
+        case 'ArrowRight': 
+            // if moving left or right at present ignore line 78  
             if (lastInputDir.x !== 0) break 
             // x: 1 moves right
             inputDir = { x: 1, y: 0 } 

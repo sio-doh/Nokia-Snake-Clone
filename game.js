@@ -38,8 +38,7 @@ function main(currentTime) {
     // moves snake to correct position.  
     // update if apple(s) gets eaten or not, 
     // update if snake gets longer 
-    // game over if snake hits itself or the wall
-    
+    // game over if snake hits itself or the wall    
     draw() // draws or renders everything based on update loop 
 } 
 
@@ -48,8 +47,7 @@ window.requestAnimationFrame(main)
 function update() {
     updateSnake() 
     updateApple() 
-    // if snake runs into itself or goes off grid
-    dies()  
+    dies()  // if snake runs into itself or goes off grid
 } 
 
 function draw() { 
@@ -62,7 +60,7 @@ function draw() {
 
 function offGrid(location) {
     // if argument passed is bigger than the GRID_SIZE or 
-    // less than minimum GRID_SIZE 
+    // less than minimum GRID_SIZE.
     return (
         location.x < 1 || location.y < 1 || 
         location.x > GRID_SIZE || location.y > GRID_SIZE

@@ -10,8 +10,8 @@ const GRID_SIZE = 32
 
 function randGridPosition() {
     return {
-        x: Math.floor(Math.random() * GRID_SIZE), 
-        y: Math.floor(Math.random() * GRID_SIZE)
+        x: Math.floor(Math.random() * GRID_SIZE) + 1, 
+        y: Math.floor(Math.random() * GRID_SIZE) + 1
     }
 } 
 
@@ -48,7 +48,6 @@ export function update() {
         // increment the score display every time snake body lands on apple
         scoring++; 
         document.getElementById("playerScore").innerText = scoring; 
-        
         // increase snake speed by 1 after snake body lands on apple
         SNAKE_SPEED++;        
     }    
