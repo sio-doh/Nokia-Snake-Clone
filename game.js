@@ -9,8 +9,7 @@ const GRID_SIZE = 32
 // refresh screen when 'new game' button is selected
 let btn = document.getElementById("newGame");
 btn.addEventListener("click", function() {
-    // window.location = document.getElementById("gameboard").reload();
-    window.location = 'https://sio-doh.github.io/Nokia-Snake-Clone/' 
+    location.reload();
 })
 
 // currentTime = exact timestamp of when main() runs 
