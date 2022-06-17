@@ -1,7 +1,7 @@
 import { getInputDir } from "./input.js"; 
 
 // export number of times snake moves per second 
-export let SNAKE_SPEED = 1
+export let SNAKE_SPEED = 2
 // represent snake as array of x, y positions 
 const snakeBody = [{ x: 11, y: 11 }] 
 let newPieces = 0 

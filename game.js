@@ -16,8 +16,8 @@ btn.addEventListener("click", function() {
 function main(currentTime) {  
     if (gameOver) {
         // return alert('GAME OVER!!!') 
-        if (confirm('GAME OVER! You Lose... <br/>Press ok to restart.')) {
-            window.location = '/' 
+        if (confirm('GAME OVER! You Lose... Press ok to restart.')) {
+            location.reload(); 
         }
         return 
     } 
