@@ -1,11 +1,3 @@
-@media only screen and (min-width: 1920px) and (max-width: 720px) and (orientation: landscape) { 
-
-}
-
-@media only screen and (min-width: 200px) and (max-width: 1366px) and (orientation: portrait) { 
-
-}
-
 @media only screen and (min-width: 200px) and (max-width: 1920px) { 
     body {
         height: 100vh; 

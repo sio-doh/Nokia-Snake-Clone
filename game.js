@@ -17,7 +17,7 @@ function main(currentTime) {
     if (gameOver) {
         // return alert('GAME OVER!!!') 
         if (confirm('GAME OVER! You Lose... Press ok to restart.')) {
-            location.reload(); 
+            location.reload();  // window.location = '/' 
         }
         return 
     } 
